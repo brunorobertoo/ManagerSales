@@ -18,7 +18,6 @@ namespace ManagerSalesApi.Models
         [Required(ErrorMessage = "O campo de valor monetário é obrigatório!")]
         public double Amount { get; set; }
 
-        [JsonIgnore]
         public User user { get; set; }
     }
 }

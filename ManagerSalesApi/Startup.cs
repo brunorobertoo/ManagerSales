@@ -30,6 +30,9 @@ namespace ManagerSalesApi
         {
             services.AddDbContext<DataBaseContext>(opt =>
                                                opt.UseMySQL(Configuration.GetConnectionString("ManagerSalesConnection")));
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

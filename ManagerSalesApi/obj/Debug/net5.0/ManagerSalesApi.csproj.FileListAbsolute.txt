@@ -46,3 +46,9 @@ C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\H
 C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\ZstdNet.dll
 C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
