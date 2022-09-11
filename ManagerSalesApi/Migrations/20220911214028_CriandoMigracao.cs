@@ -31,6 +31,8 @@ namespace ManagerSalesApi.Migrations
                     Cnpj = table.Column<string>(type: "text", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Amount = table.Column<double>(type: "double", nullable: false),
+                    CorporateName = table.Column<string>(type: "text", nullable: true),
+                    TaskMain = table.Column<string>(type: "text", nullable: true),
                     userId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>

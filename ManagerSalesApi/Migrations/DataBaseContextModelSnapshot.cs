@@ -30,8 +30,14 @@ namespace ManagerSalesApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("CorporateName")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TaskMain")
                         .HasColumnType("text");
 
                     b.Property<int?>("userId")
@@ -69,15 +75,10 @@ namespace ManagerSalesApi.Migrations
             modelBuilder.Entity("ManagerSalesApi.Models.Opportunity", b =>
                 {
                     b.HasOne("ManagerSalesApi.Models.User", "user")
-                        .WithMany("opportunities")
+                        .WithMany()
                         .HasForeignKey("userId");
 
                     b.Navigation("user");
-                });
-
-            modelBuilder.Entity("ManagerSalesApi.Models.User", b =>
-                {
-                    b.Navigation("opportunities");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using ManagerSalesApi.Client;
-using ManagerSalesApi.Client.Response;
+using ManagerSalesApi.Controllers.Request;
 using ManagerSalesApi.Controllers.Response;
 using ManagerSalesApi.Data;
 using ManagerSalesApi.Models;
@@ -24,8 +23,9 @@ namespace ManagerSalesApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUser([FromBody] User user)
+        public IActionResult AddUser([FromBody] UserRequest userRequest)
         {
+            User user = _mapper.Map<User>(userRequest);
             _context.Users.Add(user);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { Id = user.Id}, user);
@@ -38,11 +38,9 @@ namespace ManagerSalesApi.Controllers
             List<Opportunity> opportunities = _context.Opportunities.Where(b => b.user.Id == id).ToList();
 
             UserResponse userResponse = _mapper.Map<UserResponse>(user);
-
-            userResponse.opportunities = opportunities;
-
             if(user != null)
             {
+                userResponse.opportunities = opportunities;
                 return Ok(userResponse);
             }
             return BadRequest();

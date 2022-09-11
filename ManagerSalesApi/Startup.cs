@@ -1,18 +1,14 @@
+using ManagerSalesApi.Client;
 using ManagerSalesApi.Data;
+using ManagerSalesApi.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ManagerSalesApi
 {
@@ -34,6 +30,8 @@ namespace ManagerSalesApi
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddControllers();
+            services.AddScoped<RandomUserOpportunityService, RandomUserOpportunityService>();
+            services.AddScoped<PublicaCnpjClient, PublicaCnpjClient>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagerSalesApi", Version = "v1" });

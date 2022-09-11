@@ -1,13 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ManagerSalesApi.Models
+namespace ManagerSalesApi.Controllers.Request
 {
-    public class Opportunity
+    public class OpportunityRequest
     {
-        [Key]
-        [Required]
-        public int Id { get; set; }
-
         [Required(ErrorMessage = "O campo de cnpj é obrigatório!")]
         public string Cnpj { get; set; }
 
@@ -16,11 +12,5 @@ namespace ManagerSalesApi.Models
 
         [Required(ErrorMessage = "O campo de valor monetário é obrigatório!")]
         public double Amount { get; set; }
-
-        public string CorporateName { get; set; }
-
-        public string TaskMain { get; set; }
-
-        public User user { get; set; }
     }
 }
