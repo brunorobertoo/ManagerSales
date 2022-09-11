@@ -26,6 +26,11 @@ namespace ManagerSalesApi.Controllers
         public IActionResult AddUser([FromBody] UserRequest userRequest)
         {
             User user = _mapper.Map<User>(userRequest);
+            List<User> usersValid = _context.Users.Where(b => b.Email == userRequest.Email).ToList();
+            if(usersValid.Count > 0)
+            {
+                return BadRequest("Email já foi cadastrado anteriormente");
+            }
             _context.Users.Add(user);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { Id = user.Id}, user);
