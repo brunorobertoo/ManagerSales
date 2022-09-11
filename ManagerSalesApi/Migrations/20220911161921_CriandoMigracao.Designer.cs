@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ManagerSalesApi.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20220911152603_CriandoMigracao")]
+    [Migration("20220911161921_CriandoMigracao")]
     partial class CriandoMigracao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,7 +17,7 @@ namespace ManagerSalesApi.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.5");
+                .HasAnnotation("ProductVersion", "5.0.17");
 
             modelBuilder.Entity("ManagerSalesApi.Models.Opportunity", b =>
                 {
@@ -43,7 +43,7 @@ namespace ManagerSalesApi.Migrations
 
                     b.HasIndex("userId");
 
-                    b.ToTable("opportunities");
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("ManagerSalesApi.Models.User", b =>
@@ -60,9 +60,8 @@ namespace ManagerSalesApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Region")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Region")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

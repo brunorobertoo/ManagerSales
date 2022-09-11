@@ -1,4 +1,6 @@
-﻿using ManagerSalesApi.Data;
+﻿using ManagerSalesApi.Client;
+using ManagerSalesApi.Client.Response;
+using ManagerSalesApi.Data;
 using ManagerSalesApi.Enum;
 using ManagerSalesApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -22,21 +24,20 @@ namespace ManagerSalesApi.Controllers
         [HttpPost]
         public IActionResult AddUser([FromBody] User user)
         {
-            //Console.WriteLine("dddd " + ((int)RegionEnum.Sudeste));
             _context.Users.Add(user);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { Id = user.Id}, user);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public CnpjResponse GetById(int id)
         {
             User user = _context.Users.FirstOrDefault(filme => filme.Id == id);
-            if(user != null)
-            {
-                return Ok(user);
-            }
-            return NotFound();
+            //if(user != null)
+            //{
+                //return Ok(user);
+            //}
+            return new PublicaCnpjClient().GetInfoByCnpj("50247022000129").Result;
         }
 
     }

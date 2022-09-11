@@ -15,7 +15,7 @@ namespace ManagerSalesApi.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
-                    Region = table.Column<string>(type: "text", nullable: false)
+                    Region = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -23,7 +23,7 @@ namespace ManagerSalesApi.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "opportunities",
+                name: "Opportunities",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -35,9 +35,9 @@ namespace ManagerSalesApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_opportunities", x => x.Id);
+                    table.PrimaryKey("PK_Opportunities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_opportunities_Users_userId",
+                        name: "FK_Opportunities_Users_userId",
                         column: x => x.userId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -45,15 +45,15 @@ namespace ManagerSalesApi.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_opportunities_userId",
-                table: "opportunities",
+                name: "IX_Opportunities_userId",
+                table: "Opportunities",
                 column: "userId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "opportunities");
+                name: "Opportunities");
 
             migrationBuilder.DropTable(
                 name: "Users");

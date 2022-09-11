@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ManagerSalesApi.Enum;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -17,7 +18,7 @@ namespace ManagerSalesApi.Models
         public string Email { get; set; }
 
         [Required (ErrorMessage = "O campo de região é obrigatório!")]
-        public string Region { get; set; }
+        public RegionEnum Region { get; set; }
 
         [JsonIgnore]
         public List<Opportunity> opportunities { get; set; }
