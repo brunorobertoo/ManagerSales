@@ -19,11 +19,6 @@ namespace ManagerSalesApi.Controllers
             _service = service;
         }
         
-        /// <summary>
-        /// Lista os itens da To-do list.
-        /// </summary>
-        /// <returns>Os itens da To-do list</returns>
-        /// <response code="200">Returna os itens da To-do list cadastrados</response>
         [HttpPost]
         public IActionResult AddOpportunity([FromBody] OpportunityRequest opportunity)
         {
