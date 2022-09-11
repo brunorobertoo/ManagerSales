@@ -3,15 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ManagerSalesApi.Data
 {
-    public class UserContext : DbContext
+    public class DataBaseContext : DbContext
     {
 
-        public UserContext(DbContextOptions<UserContext> opt) : base(opt)
+        public DataBaseContext(DbContextOptions<DataBaseContext> opt) : base(opt)
         {
 
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Opportunity> opportunities { get; set; }
 
     }
 }
