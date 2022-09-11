@@ -12,7 +12,7 @@ namespace ManagerSalesApi.Data
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Opportunity> opportunities { get; set; }
+        public DbSet<Opportunity> Opportunities { get; set; }
 
     }
 }

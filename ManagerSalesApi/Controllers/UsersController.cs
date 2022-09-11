@@ -4,6 +4,7 @@ using ManagerSalesApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ManagerSalesApi.Controllers
 {
@@ -11,8 +12,6 @@ namespace ManagerSalesApi.Controllers
     [Route("v1/api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private static List<User> users = new List<User>();
-
         private DataBaseContext _context;
 
         public UsersController(DataBaseContext context)
@@ -21,11 +20,23 @@ namespace ManagerSalesApi.Controllers
         }
 
         [HttpPost]
-        public User addUser([FromBody] User user)
+        public IActionResult AddUser([FromBody] User user)
         {
             //Console.WriteLine("dddd " + ((int)RegionEnum.Sudeste));
-            users.Add(user);
-            return user;
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetById), new { Id = user.Id}, user);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            User user = _context.Users.FirstOrDefault(filme => filme.Id == id);
+            if(user != null)
+            {
+                return Ok(user);
+            }
+            return NotFound();
         }
 
     }
