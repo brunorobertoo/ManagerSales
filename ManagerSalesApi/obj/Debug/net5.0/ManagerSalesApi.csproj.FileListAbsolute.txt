@@ -52,3 +52,5 @@ C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\M
 C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\bin\Debug\net5.0\ManagerSalesApi.xml
+C:\Users\User_PC\source\repos\ManagerSalesApi\ManagerSalesApi\obj\Debug\net5.0\ManagerSalesApi.xml

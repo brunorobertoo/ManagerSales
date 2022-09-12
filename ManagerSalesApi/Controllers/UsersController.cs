@@ -6,6 +6,7 @@ using ManagerSalesApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ManagerSalesApi.Controllers
 {
@@ -22,6 +23,25 @@ namespace ManagerSalesApi.Controllers
             _mapper = mapper;
         }
 
+        /// POST v1/api/user
+        /// <summary>
+        /// Inserção de novo usuário.
+        /// </summary>
+        /// <remarks>
+        /// Exemplo:
+        ///
+        ///     POST v1/api/user
+        ///     {
+        ///        "name": "teste do teste",
+        ///        "email": "email@teste.com",
+        ///        "region": 3
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="value"></param>
+        /// <returns>Retorna os dados de usuários com Id</returns>
+        /// <response code="201">Item criado no banco de dados</response>
+        /// <response code="400">Se o item for enviado com email já cadastrado</response> 
         [HttpPost]
         public IActionResult AddUser([FromBody] UserRequest userRequest)
         {
@@ -36,6 +56,14 @@ namespace ManagerSalesApi.Controllers
             return CreatedAtAction(nameof(GetById), new { Id = user.Id}, user);
         }
 
+        /// POST v1/api/user/1
+        /// <summary>
+        /// Lista o usuário com todos as suas oportunidades vinculadas
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Retorna os dados de usuário com suas oportunidades</returns>
+        /// <response code="200">Retorno de usuário com sua lista de oportunidades</response>
+        /// <response code="400">Se o usuário não existir na base de dados</response>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {

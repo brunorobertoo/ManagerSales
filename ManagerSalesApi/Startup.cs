@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using System.ComponentModel;
+using System.IO;
+using System.Reflection;
 
 namespace ManagerSalesApi
 {
@@ -34,7 +37,27 @@ namespace ManagerSalesApi
             services.AddScoped<PublicaCnpjClient, PublicaCnpjClient>();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ManagerSalesApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "ManagerSalesApi", 
+                    Version = "v1" ,
+                    Description = "Aplicação ASP.NET Core Web API para gerenciar Oportunidade de Vendas ",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Bruno Roberto Oliveira da Silva",
+                        Email = "bruno.roberto3br@gmail.com",
+                        Url = new System.Uri("https://brunorobertodevweb.com.br")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "CC BY",
+                        Url = new System.Uri("https://creativecommons.org/licenses/by/4.0")
+                    }
+                });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
