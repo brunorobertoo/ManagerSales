@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "7decc24b-1358-4f86-85ed-123bee3c562a",
+		"name": "ManagerSales - Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Salvar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"wenderson\",\r\n    \"email\": \"wend@rober.com\",\r\n    \"region\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/v1/api/users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter informações da api pública",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://publica.cnpj.ws/cnpj/50247022000129",
+					"protocol": "https",
+					"host": [
+						"publica",
+						"cnpj",
+						"ws"
+					],
+					"path": [
+						"cnpj",
+						"50247022000129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trazer Dados de usuário e suas oportunidades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/v1/api/users/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Salvar nova oportunidade",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cnpj\": \"50247022000129\",\r\n  \"name\": \"Oportunidade de ouro\",\r\n  \"amount\": 500.25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/v1/api/opportunity",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"v1",
+						"api",
+						"opportunity"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
