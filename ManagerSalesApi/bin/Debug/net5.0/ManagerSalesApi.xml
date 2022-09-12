@@ -21,7 +21,7 @@
             
              </remarks>
              <param name="value"></param>
-             <returns>Retorna os dados de usuários com Id</returns>
+             <returns>Retorna os dados da oportunidade cadastrada</returns>
              <response code="200">Item criado no banco de dados</response>
              <response code="400">Nenhum cliente retornado com esse cnpj</response>
              <response code="400">Nenhum usuário foi encontrado para a região do cnpj!</response>
@@ -34,7 +34,7 @@
              <remarks>
              Exemplo:
             
-                 POST v1/api/user
+                 POST v1/api/users
                  {
                     "name": "teste do teste",
                     "email": "email@teste.com",
@@ -48,7 +48,7 @@
              <response code="400">Se o item for enviado com email já cadastrado</response> 
         </member>
         <member name="M:ManagerSalesApi.Controllers.UsersController.GetById(System.Int32)">
-            POST v1/api/user/1
+            POST v1/api/users/1
             <summary>
             Lista o usuário com todos as suas oportunidades vinculadas
             </summary>

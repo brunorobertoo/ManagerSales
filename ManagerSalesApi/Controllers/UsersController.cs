@@ -30,7 +30,7 @@ namespace ManagerSalesApi.Controllers
         /// <remarks>
         /// Exemplo:
         ///
-        ///     POST v1/api/user
+        ///     POST v1/api/users
         ///     {
         ///        "name": "teste do teste",
         ///        "email": "email@teste.com",
@@ -56,7 +56,7 @@ namespace ManagerSalesApi.Controllers
             return CreatedAtAction(nameof(GetById), new { Id = user.Id}, user);
         }
 
-        /// POST v1/api/user/1
+        /// POST v1/api/users/1
         /// <summary>
         /// Lista o usuário com todos as suas oportunidades vinculadas
         /// </summary>

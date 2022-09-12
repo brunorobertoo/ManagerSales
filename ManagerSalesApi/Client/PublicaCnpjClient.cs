@@ -24,7 +24,7 @@ namespace ManagerSalesApi.Client
 
             if (response.StatusCode != System.Net.HttpStatusCode.OK)
             {
-                throw new BadHttpRequestException("Nenhum cliente retornado com esse cnpj");
+                throw new BadHttpRequestException("Nenhum cliente foi retornado com esse cnpj");
             }
 
             var resp = await response.Content.ReadAsStringAsync();

@@ -2,10 +2,10 @@
 {
     public enum RegionEnum
     {
-        Norte,
-        Nordeste,
-        Sudeste,
-        Sul,
-        CentroOeste
+        Norte = 1,
+        Nordeste = 2,
+        Sudeste = 3,
+        Sul = 4,
+        CentroOeste = 5
     }
 }

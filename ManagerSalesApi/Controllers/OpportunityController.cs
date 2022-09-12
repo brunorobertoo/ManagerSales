@@ -35,7 +35,7 @@ namespace ManagerSalesApi.Controllers
         ///
         /// </remarks>
         /// <param name="value"></param>
-        /// <returns>Retorna os dados de usuários com Id</returns>
+        /// <returns>Retorna os dados da oportunidade cadastrada</returns>
         /// <response code="200">Item criado no banco de dados</response>
         /// <response code="400">Nenhum cliente retornado com esse cnpj</response>
         /// <response code="400">Nenhum usuário foi encontrado para a região do cnpj!</response>
