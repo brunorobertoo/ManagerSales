@@ -77,7 +77,13 @@ onde meu valor definitivo é o objeto CnpjResponse e por ele posso obter os dado
 
 Depois da requisição da api externa e realizar uma consulta no banco para obter os usuários baseado no dado do código do ibge a seguinte lógica foi aplicada.
 
-1- é verificado se a lista de usuários tem algum dado se não tiver estoura uma Exception informando que não existem usuários para região
+1 - é verificado se a lista de usuários tem algum dado se não tiver estoura uma Exception informando que não existem usuários para região
 2 - Caso tenha dados é utilizado o foreach para verificar se os usuários tem oportunidades, o usuário que não tiver vai ser escolhido.
 3 - Caso todos tenham oportunidades é obtido o primeiro da lista.
 4 - Caso retorne apenas 1 usuário esse será cadastrado na oportunidade.
+
+## Collection do postman com todos os endpoints utilizados
+
+```bash
+https://github.com/brunorobertoo/managerSales/blob/master/ManagerSales%20-%20Endpoints.postman_collection.json
+```
